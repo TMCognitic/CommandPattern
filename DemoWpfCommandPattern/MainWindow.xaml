@@ -11,6 +11,12 @@
     <Window.DataContext>
         <vm:MainViewModel />
     </Window.DataContext>
+    <Window.InputBindings>
+        <KeyBinding Key="Z" Command="{Binding MoveCommand}" CommandParameter="{x:Static m:Direction.North}" />
+        <KeyBinding Key="S" Command="{Binding MoveCommand}" CommandParameter="{x:Static m:Direction.South}" />
+        <KeyBinding Key="Q" Command="{Binding MoveCommand}" CommandParameter="{x:Static m:Direction.West}" />
+        <KeyBinding Key="D" Command="{Binding MoveCommand}" CommandParameter="{x:Static m:Direction.East}" />
+    </Window.InputBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -36,10 +42,10 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <RepeatButton Grid.Column="1" Content="North" Command="{Binding MoveCommand}" CommandParameter="{x:Static m:Direction.North}" />
-            <RepeatButton Grid.Row="1" Content="West" Command="{Binding MoveCommand}" CommandParameter="{x:Static m:Direction.West}" />
-            <RepeatButton Grid.Row="1" Grid.Column="2" Content="East" Command="{Binding MoveCommand}" CommandParameter="{x:Static m:Direction.East}" />
-            <RepeatButton Grid.Row="2" Grid.Column="1" Content="South" Command="{Binding MoveCommand}" CommandParameter="{x:Static m:Direction.South}" />
+            <RepeatButton Grid.Column="1" Content="North (Z)" Command="{Binding MoveCommand}" CommandParameter="{x:Static m:Direction.North}" />
+            <RepeatButton Grid.Row="1" Content="West (Q)" Command="{Binding MoveCommand}" CommandParameter="{x:Static m:Direction.West}" />
+            <RepeatButton Grid.Row="1" Grid.Column="2" Content="East (D)" Command="{Binding MoveCommand}" CommandParameter="{x:Static m:Direction.East}" />
+            <RepeatButton Grid.Row="2" Grid.Column="1" Content="South (S)" Command="{Binding MoveCommand}" CommandParameter="{x:Static m:Direction.South}" />
         </Grid>
     </Grid>    
 </Window>
